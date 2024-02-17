@@ -61,6 +61,7 @@ img{
     height: 70px;
    }
    .text{
+    margin-top: 20px;
     width: 350px;
    }
 
@@ -83,7 +84,7 @@ img{
     padding: 10px 20px;
     text-align: left;
     width: 370px;
-    height: 200px;
+    height: 250px;
     border: 1px solid black;
     border-radius: 10px;
 }
