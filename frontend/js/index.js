@@ -1,6 +1,6 @@
 import { reload, reload_2 } from "./ui.js"
-let link = 'http://localhost:8090/todos'
-
+export let link = 'http://localhost:8090/todos'
+export let wrap = document.querySelector('.three .wrap')
 let btn_adding_task = document.querySelector('#add_task')
 let dialog = document.querySelector('dialog')
 let close = document.querySelector('.close')
@@ -32,7 +32,6 @@ form.onsubmit = (e) => {
     .then(res => res.json())
     .then(res => console.log(res))
 }
-let wrap = document.querySelector('.three .wrap')
 let types_of_site = document.querySelectorAll('.type')
 let prev = 0
 types_of_site.forEach((type, idx) => {
@@ -56,3 +55,4 @@ types_of_site.forEach((type, idx) => {
     }
 
 })
+

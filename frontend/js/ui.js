@@ -1,4 +1,5 @@
-
+import { link, wrap } from "./index.js";
+let edit_id 
 export function reload(arr,place) {
     place.innerHTML = ''
     // a
@@ -42,9 +43,10 @@ export function reload(arr,place) {
         tr.append(td_1, div,td_3,td_4,td_5)
         table.append(tr)
         place.append(table)
+        // d
+        delete_and_change(item.id,tr)
     }
 }
-
 export function reload_2(arr,place) {
     place.innerHTML = ''
     let div = document.createElement('div')
@@ -72,5 +74,51 @@ export function reload_2(arr,place) {
         div_1.append(h2, p_1, div_2, p_4)
         div.append(div_1)
         place.append(div)
+        // d
+        delete_and_change(item.id,div)
     }
+}
+
+function delete_and_change(id, place) {
+    let dialog_2 = document.querySelector('.replacement')
+let close_2 = document.querySelector('.close_second')
+let btn = document.querySelector('.form_btn_1')
+let btn_delete = document.querySelector('.form_btn_2')
+const form_2 = document.forms.change_or_delete
+close_2.onclick = () => {
+    dialog_2.close()
+}
+place.ondblclick = () => {
+    dialog_2.showModal()
+    edit_id = id
+    console.log(edit_id);
+}
+btn.onclick = () => {
+    let changes = {
+        Header: new FormData(form_2).get('header'),
+        Description: new FormData(form_2).get('description'),
+        Time: new FormData(form_2).get('time'),
+        Day: new FormData(form_2).get('day'),
+        Type_of_task: new FormData(form_2).get('type_of_task')
+    }
+    fetch(link + '/' + edit_id, {
+        method: 'put',
+        body: JSON.stringify(changes),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(res => res.json())
+    .then(res => reload(res, wrap))
+}
+btn_delete.onclick = () => {
+    fetch(link + '/' + edit_id, {
+        method: 'delete',
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(res => res.json())
+    .then(res => reload(res, wrap))
+}
 }
