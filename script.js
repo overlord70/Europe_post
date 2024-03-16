@@ -28,6 +28,13 @@ body.ondrop = (event) => {
 }
 gates.forEach(gate => {
     gate.ondragenter = () => {
+    var scalar = 2;
+    var pineapple = confetti.shapeFromText({ text: '⚽️', scalar });
+
+    confetti({
+    shapes: [pineapple],
+    scalar
+    });
         if(gate.id === 'two'){
             span_2.innerHTML++
         } else {
@@ -42,3 +49,5 @@ restart.onclick = () => {
    ball.style.top = '50%'
    ball.style.left = '50%'
 }
+
+
