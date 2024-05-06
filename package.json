@@ -17,6 +17,7 @@
     "vite": "^5.1.4"
   },
   "dependencies": {
-    "json-server": "^1.0.0-alpha.23"
+    "json-server": "^1.0.0-alpha.23",
+    "svg-country-flags": "^1.2.10"
   }
 }
