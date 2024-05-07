@@ -305,15 +305,21 @@ export function create_header() {
         dialog2.close()
     }
 
-const handleFormSubmit = (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const obj = {};
-    formData.forEach((val, key) => obj[key] = val);
-    console.log(obj);
-};
 
-signInForm.onsubmit = handleFormSubmit;
-signUpForm2.onsubmit = handleFormSubmit;
+    
+ signInForm.onsubmit = (e) => {
+    e.preventDefault()
+    let fm = new FormData(e.target)
+    let obj = {}
+    fm.forEach((val, key) => obj[key] = val)
+    console.log(obj);    
+}
+signUpForm2.onsubmit = (e) => {
+    e.preventDefault()
+    let fm = new FormData(e.target)
+    let obj = {}
+    fm.forEach((val, key) => obj[key] = val)
+    console.log(obj);    
+}
 
 }
