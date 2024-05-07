@@ -134,6 +134,7 @@ export function create_header() {
     
     const rememberCheckbox = document.createElement('input');
     rememberCheckbox.id = 'check2';
+    rememberCheckbox.name = 'checkbox'
     rememberCheckbox.type = 'checkbox';
     
     const rememberPara = document.createElement('p');
@@ -233,6 +234,7 @@ export function create_header() {
 
     const agreeCheckbox2 = document.createElement('input');
     agreeCheckbox2.id = 'check';
+    agreeCheckbox2.name = 'checkbox'
     agreeCheckbox2.type = 'checkbox';
     equalityDiv2.appendChild(agreeCheckbox2);
 
@@ -302,4 +304,16 @@ export function create_header() {
     closeButton2.onclick = () => {
         dialog2.close()
     }
+
+const handleFormSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const obj = {};
+    formData.forEach((val, key) => obj[key] = val);
+    console.log(obj);
+};
+
+signInForm.onsubmit = handleFormSubmit;
+signUpForm2.onsubmit = handleFormSubmit;
+
 }
