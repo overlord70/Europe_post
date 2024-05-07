@@ -19,6 +19,9 @@ img{
     border: 0;
     cursor: pointer;
   }
+  input{
+    border: 0;
+  }
   .header{
     max-width: 1920px;
     min-width: 200px;
@@ -120,6 +123,123 @@ img{
         display: flex;
         align-items: center;
         gap: 10px;
+      }
+    }
+  }
+  .sign_in{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    max-width: 575px;
+    max-height: 610px;
+    border: 0;
+    width: 100%;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 1);
+    padding: 55px;
+    .head{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h1{
+        font-size: 40px;
+        font-weight: 800;
+        line-height: 48px;
+      }
+      .x{
+        cursor: pointer;
+        padding: 10px;
+        background-color: grey;
+        border-radius: 50%;
+      }
+    }
+    .question{
+      margin-block: 20px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22.4px;
+      color: rgba(45, 45, 45, 0.9);
+      .offer{
+        cursor: pointer;
+        margin-left: 25px;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        color: rgba(157, 123, 109, 1);
+        text-decoration: underline;
+      }
+    }
+    .btns_of_apps{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        width: 223.5px;
+        color: white;
+        height: 52px;
+        padding: 14px 24px 14px 24px;
+        border-radius: 8px;
+      }
+      #two{
+        background: rgba(47, 128, 237, 1);
+      }
+      #one{
+        background: rgba(234, 12, 12, 1);
+      }
+    }
+    .signin{
+      margin-top: 15px;
+      .checking_account{
+        margin-top: 8px;
+        width: 100%;
+        padding: 14px 24px 14px 24px;
+        border-radius: 10px;
+        background: rgba(242, 242, 242, 1);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+      }
+      #check{
+        width: 18px;
+        height: 18px;
+        accent-color: rgba(234, 12, 12, 1);
+      }
+      .flex{
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .equality{
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          text-align: center;
+        }
+        .forgot_password{
+          cursor: pointer;
+          text-decoration: underline;
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 24px;
+          color: rgba(157, 123, 109, 1);
+        }
+      }
+      .enter{
+        margin-top: 20px;
+        height: 52px;
+        width: 100%;
+        border-radius: 8px;
+        background: rgba(234, 12, 12, 1);
+        color: white;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 24px;
       }
     }
   }
