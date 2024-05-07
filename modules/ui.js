@@ -133,7 +133,7 @@ export function create_header() {
     equalityDiv.classList.add('equality');
     
     const rememberCheckbox = document.createElement('input');
-    rememberCheckbox.id = 'check';
+    rememberCheckbox.id = 'check2';
     rememberCheckbox.type = 'checkbox';
     
     const rememberPara = document.createElement('p');
@@ -147,6 +147,110 @@ export function create_header() {
     enterButton.classList.add('enter');
     enterButton.textContent = 'Войти';
     
+    const dialog2 = document.createElement('dialog');
+    dialog2.classList.add('sign_up');
+
+    const head2 = document.createElement('div');
+    head2.classList.add('head');
+
+    const heading2 = document.createElement('h1');
+    heading2.textContent = 'Регистрация';
+    head2.appendChild(heading2);
+
+    const closeButton2 = document.createElement('img');
+    closeButton2.src = '/public/svg/close.svg';
+    closeButton2.classList.add('x');
+    head2.appendChild(closeButton2);
+
+    dialog2.appendChild(head2);
+
+    const questionPara2 = document.createElement('p');
+    questionPara2.classList.add('question');
+    questionPara2.innerHTML = `У вас уже есть аккаунт ? <span id="enter_90"  class="offer">Войдите</span>`
+    dialog2.appendChild(questionPara2);
+
+    const btnsOfApps2 = document.createElement('div');
+    btnsOfApps2.classList.add('btns_of_apps');
+
+    const googleBtn2 = document.createElement('button');
+    googleBtn2.classList.add('btn');
+    googleBtn2.id = 'one';
+    googleBtn2.innerHTML = '<img src="/public/svg/google.svg" alt=""> Google';
+    btnsOfApps2.appendChild(googleBtn2);
+
+    const facebookBtn2 = document.createElement('button');
+    facebookBtn2.classList.add('btn');
+    facebookBtn2.id = 'two';
+    facebookBtn2.innerHTML = '<img src="/public/svg/facebook.svg" alt=""> Facebook';
+    btnsOfApps2.appendChild(facebookBtn2);
+
+    dialog2.appendChild(btnsOfApps2);
+
+    const signUpForm2 = document.createElement('form');
+    signUpForm2.classList.add('signup');
+    signUpForm2.name = 'signup';
+
+    const nameInput2 = document.createElement('input');
+    nameInput2.placeholder = 'Имя фамилия';
+    nameInput2.classList.add('registing_account');
+    nameInput2.name = 'name';
+    nameInput2.type = 'text';
+    signUpForm2.appendChild(nameInput2);
+
+    const emailInput2 = document.createElement('input');
+    emailInput2.placeholder = 'Е-mail / Логин';
+    emailInput2.classList.add('registing_account');
+    emailInput2.name = 'email';
+    emailInput2.type = 'email';
+    signUpForm2.appendChild(emailInput2);
+
+    const phoneNumberInput2 = document.createElement('input');
+    phoneNumberInput2.placeholder = 'Номер телефона';
+    phoneNumberInput2.classList.add('registing_account');
+    phoneNumberInput2.name = 'surname';
+    phoneNumberInput2.type = 'text';
+    signUpForm2.appendChild(phoneNumberInput2);
+
+    const passwordInput2 = document.createElement('input');
+    passwordInput2.placeholder = 'Пароль';
+    passwordInput2.classList.add('registing_account');
+    passwordInput2.name = 'password';
+    passwordInput2.type = 'password';
+    signUpForm2.appendChild(passwordInput2);
+
+    const confirmPasswordInput2 = document.createElement('input');
+    confirmPasswordInput2.placeholder = 'Повторить пароль';
+    confirmPasswordInput2.classList.add('registing_account');
+    confirmPasswordInput2.name = 'password';
+    confirmPasswordInput2.type = 'password';
+    signUpForm2.appendChild(confirmPasswordInput2);
+
+    const flexDiv2 = document.createElement('div');
+    flexDiv2.classList.add('flex');
+
+    const equalityDiv2 = document.createElement('div');
+    equalityDiv2.classList.add('equality');
+
+    const agreeCheckbox2 = document.createElement('input');
+    agreeCheckbox2.id = 'check';
+    agreeCheckbox2.type = 'checkbox';
+    equalityDiv2.appendChild(agreeCheckbox2);
+
+    const agreementPara2 = document.createElement('p');
+    agreementPara2.textContent = 'согласен с публичным договором предоставлния услуг';
+    equalityDiv2.appendChild(agreementPara2);
+
+    flexDiv2.appendChild(equalityDiv2);
+    signUpForm2.appendChild(flexDiv2);
+
+    // Create submit button
+    const registerButton2 = document.createElement('button');
+    registerButton2.classList.add('regist');
+    registerButton2.textContent = 'Войти';
+    signUpForm2.appendChild(registerButton2);
+
+    dialog2.appendChild(signUpForm2);
+
     const links = ['О компании', 'Список магазинов', 'Отзывы', 'Вопрос-ответ', 'Калькулятор', 'Контакты'];
     links.forEach(linkText => {
         const link = document.createElement('a');
@@ -174,12 +278,28 @@ export function create_header() {
     flexDiv.append(equalityDiv, forgotPasswordPara)
     signInForm.append(flexDiv, enterButton)
     dialog.append(head, questionPara, btnsOfApps, signInForm)
-    document.body.prepend(header, dialog)
+    document.body.prepend(header, dialog, dialog2)
 
     sign_apliences.onclick = () => {
         dialog.showModal()
     }
     closeButton.onclick = () => {
         dialog.close()
+    }
+    const offers = document.querySelectorAll('.offer')
+    
+    offers.forEach(offer => {
+        offer.onclick = () => {
+            if(offer.id === 'enter_90'){
+                dialog2.close()
+                dialog.showModal()
+            }else{
+                dialog.close()
+                dialog2.showModal()
+            }
+        }
+    })
+    closeButton2.onclick = () => {
+        dialog2.close()
     }
 }
