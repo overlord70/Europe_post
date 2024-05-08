@@ -3,5 +3,18 @@
 .one{
     .flex{
         display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .first_side{
+
+        }
+        .second_side{
+            img{
+                max-width: 57%;
+                position: absolute;
+                right: 0;
+                mix-blend-mode: multiply;
+            }
+        }
     }
 }
