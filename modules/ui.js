@@ -325,6 +325,7 @@ export function create_header() {
                 } else {
                     http.postData('/users', obj)
                         .then(() => {
+                            localStorage.setItem('user', JSON.stringify(obj))
                             alert('Registration successful!');
                         })
                         .catch( () => {
@@ -351,7 +352,9 @@ export function create_header() {
             http.getData('/users')
             .then(res => {
                 const found_item = res.find(item => item.email === email && item.password === password)
+                console.log(found_item);
                 if(found_item){
+                    localStorage.setItem('user', JSON.stringify(found_item))
                     alert('success')
                 } else {
                     alert('regist')
@@ -359,4 +362,10 @@ export function create_header() {
             })
         }
     }
+
+    // const user = JSON.parse(localStorage.getItem('user'))
+
+    // if(user){
+    //     sign_apliences.remove()
+    // }
 }

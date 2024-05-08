@@ -8,6 +8,15 @@
       "password": "90",
       "password_cheking": "90",
       "checkbox": "on"
+    },
+    {
+      "id": "dfa5",
+      "name": "Sardor",
+      "email": "mukhitdinovsardor471@gmail.com",
+      "surname": "Mukhitdinov",
+      "password": "90",
+      "password_cheking": "90",
+      "checkbox": "on"
     }
   ]
 }
