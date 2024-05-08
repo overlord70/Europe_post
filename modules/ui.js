@@ -2,7 +2,8 @@ import { MakeRequest } from "./http"
 
 const http = new MakeRequest()
 export function create_header() {
-    
+    const user = JSON.parse(localStorage.getItem('user'))
+
     const header = document.createElement('header')
     header.className = 'header'
     
@@ -248,11 +249,23 @@ export function create_header() {
     flexDiv2.appendChild(equalityDiv2);
     signUpForm2.appendChild(flexDiv2);
 
-    
     const registerButton2 = document.createElement('button');
     registerButton2.classList.add('regist');
     registerButton2.textContent = 'Войти';
     signUpForm2.appendChild(registerButton2);
+
+    const round = document.createElement('div')
+    round.className = 'round'
+
+    const green = document.createElement('div')
+    green.className = 'green'
+
+    const name_p = document.createElement('p')
+    name_p.className = 'name'
+    if(user){
+        name_p.innerHTML = user.name.slice(0, 1)
+    }
+
 
     dialog2.appendChild(signUpForm2);
 
@@ -267,11 +280,12 @@ export function create_header() {
     help_with_searching_down.append(img_help_with_searching, 'Помощь в поиске товаров')
     down.append(help_with_searching_down)
     country_apliences.append(img_country, p_country)
-    apliences.append(place_order__apliences, sign_apliences, country_apliences)
+    apliences.append(place_order__apliences, sign_apliences, round, country_apliences)
     one_money.append(h4_one, p_one)
     two_money.append(h4_two, p_two)
     money.append(one_money, two_money)
     email.append(email_img, email_p)
+    round.append(name_p, green)
     flex.append(our_messangers, img_messangers)
     messangers.append(flex, email)
     up.append(logo, messangers, money,  apliences)
@@ -363,9 +377,11 @@ export function create_header() {
         }
     }
 
-    // const user = JSON.parse(localStorage.getItem('user'))
+    
 
-    // if(user){
-    //     sign_apliences.remove()
-    // }
+    if(user){
+        round.style.display = 'block'
+        sign_apliences.remove()
+        return
+    }
 }

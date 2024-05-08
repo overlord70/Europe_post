@@ -75,6 +75,7 @@ img{
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 15px;
         .place_order{
               padding: 14px 24px 14px 24px;
               border-radius: 8px;
@@ -123,6 +124,35 @@ img{
         display: flex;
         align-items: center;
         gap: 10px;
+      }
+    }
+    .round{
+      position: relative;
+      display: none;
+      width: 50px;
+      height: 50px;
+      background: rgba(155, 81, 224, 1);
+      border-radius: 50%;
+      border: 5px solid  #FD6E6A ;
+      .green{
+        position: absolute;
+        right: -5px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: rgba(0, 186, 136, 1);
+        border: 3px solid white;
+      }
+      p{
+        font-size: 19px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        font-weight: 500;
+        line-height: 14px;
+        text-align: center;
+        color: white;
       }
     }
   }
