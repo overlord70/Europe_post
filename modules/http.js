@@ -2,7 +2,7 @@ import axios from 'axios'
 
   
 export class MakeRequest {
-    baseURL = import.meta.env.VIT_BASE_URL
+    baseURL = import.meta.env.VITE_BASE_URL
 
     async getData(path) {
         try {

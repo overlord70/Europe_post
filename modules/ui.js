@@ -1,3 +1,6 @@
+import { MakeRequest } from "./http"
+
+const http = new MakeRequest()
 export function create_header() {
     
     const header = document.createElement('header')
@@ -222,7 +225,7 @@ export function create_header() {
     const confirmPasswordInput2 = document.createElement('input');
     confirmPasswordInput2.placeholder = 'Повторить пароль';
     confirmPasswordInput2.classList.add('registing_account');
-    confirmPasswordInput2.name = 'password';
+    confirmPasswordInput2.name = 'password_cheking';
     confirmPasswordInput2.type = 'password';
     signUpForm2.appendChild(confirmPasswordInput2);
 
@@ -245,7 +248,7 @@ export function create_header() {
     flexDiv2.appendChild(equalityDiv2);
     signUpForm2.appendChild(flexDiv2);
 
-    // Create submit button
+    
     const registerButton2 = document.createElement('button');
     registerButton2.classList.add('regist');
     registerButton2.textContent = 'Войти';
@@ -304,22 +307,56 @@ export function create_header() {
     closeButton2.onclick = () => {
         dialog2.close()
     }
-
-
     
- signInForm.onsubmit = (e) => {
-    e.preventDefault()
-    let fm = new FormData(e.target)
-    let obj = {}
-    fm.forEach((val, key) => obj[key] = val)
-    console.log(obj);    
-}
-signUpForm2.onsubmit = (e) => {
-    e.preventDefault()
-    let fm = new FormData(e.target)
-    let obj = {}
-    fm.forEach((val, key) => obj[key] = val)
-    console.log(obj);    
-}
+    signUpForm2.onsubmit = (e) => {
+        e.preventDefault()
+        const fm = new FormData(e.target)
+        const obj = {}
+        fm.forEach((val, key) => obj[key] = val.trim())
+        const {email, password, name, surname, password_cheking, checkbox} = obj
 
+        if(email && password && name && surname && password_cheking && checkbox){
+            http.getData('/users')
+            .then(res => {
+                const existingUser = res.find(user => user.email === email);
+
+                if (existingUser) {
+                    alert('This email is already registered.');
+                } else {
+                    http.postData('/users', obj)
+                        .then(() => {
+                            alert('Registration successful!');
+                        })
+                        .catch( () => {
+                            alert('Registration failed. Please try again later.');
+                        });
+                }
+            })
+            .catch( () => {
+                alert('Failed to fetch user data. Please try again later.');
+            });
+        
+        }
+    }
+
+    signInForm.onsubmit = (e) => {
+        e.preventDefault()
+        const fm = new FormData(e.target)
+        const obj = {}
+        fm.forEach((val, key) =>  obj[key] = val.trim())
+
+        const {email, password, checkbox} = obj
+
+        if(email && password && checkbox){
+            http.getData('/users')
+            .then(res => {
+                const found_item = res.find(item => item.email === email && item.password === password)
+                if(found_item){
+                    alert('success')
+                } else {
+                    alert('regist')
+                }
+            })
+        }
+    }
 }

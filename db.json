@@ -1,5 +1,13 @@
 {
-    "users":[
-        
-    ]
+  "users": [
+    {
+      "id": "40e2",
+      "name": "Sardor",
+      "email": "smukhitdinov471@gmail.com",
+      "surname": "Mukhitdinov",
+      "password": "90",
+      "password_cheking": "90",
+      "checkbox": "on"
+    }
+  ]
 }
