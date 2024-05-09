@@ -1,21 +1,12 @@
 {
   "users": [
     {
-      "id": "40e2",
+      "id": "d609",
       "name": "Sardor",
       "email": "smukhitdinov471@gmail.com",
-      "surname": "Mukhitdinov",
-      "password": "90",
-      "password_cheking": "90",
-      "checkbox": "on"
-    },
-    {
-      "id": "dfa5",
-      "name": "Sardor",
-      "email": "mukhitdinovsardor471@gmail.com",
-      "surname": "Mukhitdinov",
-      "password": "90",
-      "password_cheking": "90",
+      "surname": "998978921909",
+      "password": "sardor_2008",
+      "password_cheking": "sardor_2008",
       "checkbox": "on"
     }
   ]
