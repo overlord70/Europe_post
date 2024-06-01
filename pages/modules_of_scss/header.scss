@@ -4,13 +4,16 @@
     box-sizing: border-box;
     font-family: Rubik;
 }
+
 img{
     max-width: 100%;
 }
+
 .wrap {
     width: 1300px;
     margin: 0 auto;
   }
+
 ::-webkit-scrollbar {
     display: none;
   }
@@ -19,9 +22,11 @@ img{
     border: 0;
     cursor: pointer;
   }
+
   input{
     border: 0;
   }
+
   .header{
     max-width: 1920px;
     min-width: 200px;
