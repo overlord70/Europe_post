@@ -32,13 +32,17 @@ img{
     min-width: 200px;
     margin: 0 auto;
     padding: 10px 20px;
+      
     .up, .down{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        
     }
+      
     .up{
       margin-inline: 15px;
+        
       .messangers{
         display: flex;
         align-items: start;
@@ -46,41 +50,52 @@ img{
         font-size: 16px;
         font-weight: 400;
         line-height: 22.4px;
+          
         .flex{
           display: flex;
           align-items: center;
           gap: 15px;
         }
+          
         .email{
           display: flex;
           align-items: center;
           gap: 5px;
         }
+          
       }
+        
       .money{
         display: flex;
         align-items: center;
         flex-direction: column;
+          
         .one, .two{
           display: flex;
           gap: 10px;
+            
           h4{
             font-size: 16px;
             font-weight: 700;
             line-height: 19.2px;
           }
+            
           p{
             font-size: 16px;
             font-weight: 400;
             line-height: 22.4px;
           }
+            
         }
+          
       }
+        
       .apliences{
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 15px;
+          
         .place_order{
               padding: 14px 24px 14px 24px;
               border-radius: 8px;
@@ -89,7 +104,9 @@ img{
               line-height: 20px;
               color: rgba(255, 255, 255, 1);
               background: rgba(234, 12, 12, 1);
+            
         }
+          
         .sign{
           background-color: white;
           padding: 14px 24px 14px 24px;
@@ -97,21 +114,30 @@ img{
           font-size: 14px;
           font-weight: 700;
           line-height: 20px;
+            
         }
+          
         .country{
           display: flex;
           align-items: center;
           gap: 5px;
+            
           img{
             mix-blend-mode: multiply;
             max-width: 50px;
             border-radius: 50%;
           }
+            
         }
+          
       }
+        
     }
+      
     .down{
+        
       margin-top: 15px;
+        
       a{
         color: black;
         font-size: 14px;
@@ -119,6 +145,7 @@ img{
         line-height: 20px;
         text-decoration: none;
       }
+        
       .help_with_searching{
         max-width: 240px;
         max-height: 32px;
@@ -130,7 +157,9 @@ img{
         align-items: center;
         gap: 10px;
       }
+        
     }
+      
     .round{
       position: relative;
       display: none;
@@ -139,6 +168,7 @@ img{
       background: rgba(155, 81, 224, 1);
       border-radius: 50%;
       border: 5px solid  #FD6E6A ;
+        
       .green{
         position: absolute;
         right: -5px;
@@ -148,6 +178,7 @@ img{
         background: rgba(0, 186, 136, 1);
         border: 3px solid white;
       }
+        
       p{
         font-size: 19px;
         position: absolute;
@@ -159,8 +190,11 @@ img{
         text-align: center;
         color: white;
       }
+        
     }
+      
   }
+
   .sign_in, .sign_up{
     position: absolute;
     top: 50%;
@@ -173,21 +207,25 @@ img{
     border-radius: 16px;
     background: rgba(255, 255, 255, 1);
     padding: 55px;
+      
     .head{
       display: flex;
       justify-content: space-between;
       align-items: center;
+        
       h1{
         font-size: 40px;
         font-weight: 800;
         line-height: 48px;
       }
+        
       .x{
         cursor: pointer;
         padding: 10px;
         background-color: grey;
         border-radius: 50%;
       }
+        
     }
     .question{
       margin-block: 20px;
@@ -196,6 +234,7 @@ img{
       font-weight: 400;
       line-height: 22.4px;
       color: rgba(45, 45, 45, 0.9);
+        
       .offer{
         cursor: pointer;
         margin-left: 25px;
@@ -205,11 +244,13 @@ img{
         color: rgba(157, 123, 109, 1);
         text-decoration: underline;
       }
+        
     }
     .btns_of_apps{
       display: flex;
       justify-content: space-between;
       align-items: center;
+        
       .btn{
         display: flex;
         align-items: center;
@@ -221,15 +262,20 @@ img{
         padding: 14px 24px 14px 24px;
         border-radius: 8px;
       }
+        
       #two{
         background: rgba(47, 128, 237, 1);
       }
+        
       #one{
         background: rgba(234, 12, 12, 1);
       }
+        
     }
+      
     .signin, .signup{
       margin-top: 15px;
+        
       .checking_account, .registing_account{
         margin-top: 8px;
         width: 100%;
@@ -240,22 +286,26 @@ img{
         font-weight: 400;
         line-height: 24px;
       }
+        
       #check, #check2{
         width: 18px;
         height: 18px;
         accent-color: rgba(234, 12, 12, 1);
       }
+        
       .flex{
         margin-top: 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+          
         .equality{
           display: flex;
           align-items: center;
           gap: 5px;
           text-align: center;
         }
+          
         .forgot_password{
           cursor: pointer;
           text-decoration: underline;
@@ -264,7 +314,9 @@ img{
           line-height: 24px;
           color: rgba(157, 123, 109, 1);
         }
+          
       }
+        
       .enter, .regist{
         margin-top: 20px;
         height: 52px;
@@ -276,5 +328,7 @@ img{
         font-weight: 700;
         line-height: 24px;
       }
+        
     }
+      
   }
